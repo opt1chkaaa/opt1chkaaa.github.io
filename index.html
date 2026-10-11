@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>opt1chkaaa — Портфолио</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #0a0a0f;
+            color: #e8e8f0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* ===== НЕОНОВЫЙ ФОН ===== */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(255, 200, 0, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(168, 85, 247, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ===== ШАПКА ===== */
+        header {
+            padding: 28px 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: #f5c542;
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+            font-weight: 500;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #9a9ab0;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #f5c542;
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 48px;
+            margin: 48px 0 72px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1 1 400px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(245, 197, 66, 0.1);
+            color: #f5c542;
+            font-weight: 600;
+            font-size: 0.8rem;
+            padding: 6px 16px;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+            border: 1px solid rgba(245, 197, 66, 0.2);
+        }
+
+        .hero-title {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(135deg, #f5c542, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #8a8aa8;
+            max-width: 520px;
+            margin-bottom: 28px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 0.95rem;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #f5c542;
+            color: #0a0a0f;
+        }
+
+        .btn-primary:hover {
+            background: #ffd966;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 197, 66, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: #2a2a3a;
+            color: #e8e8f0;
+        }
+
+        .btn-outline:hover {
+            border-color: #f5c542;
+            background: rgba(245, 197, 66, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .hero-avatar {
+            flex: 0 0 280px;
+            height: 280px;
+            background: linear-gradient(145deg, #1a1a2a, #0f0f1a);
+            border-radius: 50% 40% 50% 40% / 40% 50% 40% 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(245, 197, 66, 0.2);
+            box-shadow: 0 0 60px rgba(245, 197, 66, 0.1);
+            transition: border-radius 0.4s, border-color 0.3s;
+        }
+
+        .hero-avatar:hover {
+            border-radius: 40% 50% 40% 50% / 50% 40% 50% 40%;
+            border-color: rgba(245, 197, 66, 0.4);
+        }
+
+        .hero-avatar i {
+            font-size: 6rem;
+            color: #f5c542;
+            text-shadow: 0 0 40px rgba(245, 197, 66, 0.5);
+        }
+
+        /* ===== СЕКЦИИ ===== */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            color: #7a7a9a;
+            font-size: 1rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        /* ===== ГАЛЕРЕЯ ===== */
+        .gallery {
+            margin: 80px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .art-card {
+            background: #111118;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #1e1e2a;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .art-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 197, 66, 0.3);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(245, 197, 66, 0.05);
+        }
+
+        .art-image {
+            height: 240px;
+            background: linear-gradient(145deg, #1a1a28, #12121c);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .art-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(10, 10, 15, 0.8));
+        }
+
+        .art-image i {
+            font-size: 3.5rem;
+            color: #2a2a3a;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .art-card:hover .art-image i {
+            color: #f5c542;
+            transform: scale(1.1);
+        }
+
+        .art-content {
+            padding: 20px 22px 24px;
+        }
+
+        .art-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .art-description {
+            color: #7a7a9a;
+            font-size: 0.9rem;
+            margin-bottom: 16px;
+        }
+
+        .art-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .tag {
+            background: rgba(168, 85, 247, 0.1);
+            color: #c084fc;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            border: 1px solid rgba(168, 85, 247, 0.15);
+        }
+
+        /* ===== КОНТАКТЫ ===== */
+        .contact {
+            margin: 80px 0 60px;
+            background: #111118;
+            border-radius: 32px;
+            padding: 48px 40px;
+            border: 1px solid #1e1e2a;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            margin-bottom: 8px;
+        }
+
+        .contact .section-subtitle {
+            margin: 0 auto 32px;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #0a0a0f;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #e8e8f0;
+            font-weight: 500;
+            transition: all 0.2s;
+            border: 1px solid #2a2a3a;
+            font-size: 0.95rem;
+        }
+
+        .contact-link i {
+            font-size: 1.1rem;
+            color: #f5c542;
+        }
+
+        .contact-link:hover {
+            border-color: #f5c542;
+            background: rgba(245, 197, 66, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* ===== ФУТЕР ===== */
+        footer {
+            text-align: center;
+            padding: 32px 0 24px;
+            color: #5a5a7a;
+            font-size: 0.85rem;
+            border-top: 1px solid #1a1a24;
+        }
+
+        /* ===== АДАПТИВ ===== */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            nav {
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .hero {
+                margin: 32px 0 56px;
+                gap: 32px;
+            }
+
+            .hero-avatar {
+                flex: 0 0 200px;
+                height: 200px;
+            }
+
+            .hero-avatar i {
+                font-size: 4rem;
+            }
+
+            .contact {
+                padding: 36px 20px;
+                border-radius: 24px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .contact-link {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Шапка -->
+        <header>
+            <div class="logo">opt1<span>chkaaa</span></div>
+            <nav>
+                <a href="#gallery">Работы</a>
+                <a href="#contact">Заказать</a>
+            </nav>
+        </header>
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">✦ Open for commissions</div>
+                <h1 class="hero-title">
+                    Рисую <span class="highlight">Murder Drones</span> и не только
+                </h1>
+                <p class="hero-description">
+                    Привет! Я opt1chkaaa — художник, создающий фанарт по Murder Drones, 
+                    рендеры и оригинальные концепты. Открыт для комиссий.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#gallery" class="btn btn-primary">
+                        <i class="fas fa-palette"></i> Смотреть работы
+                    </a>
+                    <a href="https://discord.com/users/opt1wtf" class="btn btn-outline" target="_blank">
+                        <i class="fab fa-discord"></i> Discord: opt1wtf
+                    </a>
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <i class="fas fa-draw-polygon"></i>
+            </div>
+        </section>
+
+        <!-- Галерея -->
+        <section class="gallery" id="gallery">
+            <h2 class="section-title">Избранные работы</h2>
+            <p class="section-subtitle">Murder Drones fanart, рендеры и концепты</p>
+            <div class="gallery-grid">
+                <!-- Работа 1 -->
+                <div class="art-card">
+                    <div class="art-image">
+                        <i class="fas fa-skull"></i>
+                    </div>
+                    <div class="art-content">
+                        <h3 class="art-title">Cynessa — New Idea</h3>
+                        <p class="art-description">
+                            Концепт-арт гибридной формы Cyn и Tessa. Модель: Forget / SuaveFrouzem.
+                        </p>
+                        <div class="art-tags">
+                            <span class="tag">Murder Drones</span>
+                            <span class="tag">Render</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Работа 2 -->
+                <div class="art-card">
+                    <div class="art-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="art-content">
+                        <h3 class="art-title">CynTessa Render</h3>
+                        <p class="art-description">
+                            Рендер в 4K и 1080x1080. Модель: Forget / SuaveFrouzem.
+                        </p>
+                        <div class="art-tags">
+                            <span class="tag">4K</span>
+                            <span class="tag">CynTessa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Работа 3 -->
+                <div class="art-card">
+                    <div class="art-image">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="art-content">
+                        <h3 class="art-title">Uzi</h3>
+                        <p class="art-description">
+                            Фанарт Uzi из Murder Drones. Модель: Forget / SuaveFrouzem.
+                        </p>
+                        <div class="art-tags">
+                            <span class="tag">Uzi</span>
+                            <span class="tag">Fanart</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Работа 4 -->
+                <div class="art-card">
+                    <div class="art-image">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <div class="art-content">
+                        <h3 class="art-title">Recreation — CynTessa</h3>
+                        <p class="art-description">
+                            Рекреация сцены из Murder Drones. Гибрид Cyn и Tessa.
+                        </p>
+                        <div class="art-tags">
+                            <span class="tag">Recreation</span>
+                            <span class="tag">Scene</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="contact" id="contact">
+            <h2 class="section-title">Заказать работу</h2>
+            <p class="section-subtitle">Открыт для комиссий. Свяжись удобным способом</p>
+            <div class="contact-links">
+                <a href="https://discord.com/users/opt1wtf" class="contact-link" target="_blank">
+                    <i class="fab fa-discord"></i> Discord: opt1wtf
+                </a>
+                <a href="https://x.com/opt1chkaaa" class="contact-link" target="_blank">
+                    <i class="fab fa-twitter"></i> X: @opt1chkaaa
+                </a>
+                <a href="https://tiktok.com/@opt1chkaaa" class="contact-link" target="_blank">
+                    <i class="fab fa-tiktok"></i> TikTok: @opt1chkaaa
+                </a>
+            </div>
+        </section>
+
+        <!-- Футер -->
+        <footer>
+            <p>© 2025 opt1chkaaa. Все работы принадлежат автору.</p>
+        </footer>
+    </div>
+</body>
+</html>
